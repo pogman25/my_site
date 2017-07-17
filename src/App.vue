@@ -1,6 +1,11 @@
 <template lang="pug">
   #app
-    img(src="./assets/logo.png")
+    .pictures
+      img(src="./assets/IMG_1.png")
+      img(src="./assets/IMG_2.png")
+      img(src="./assets/IMG_3.png")
+      img(src="./assets/IMG_4.png")
+      img(src="./assets/IMG_5.png")
     h1 {{ msg }}
     h2 Essential Links
     ul
@@ -27,6 +32,28 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+
+.pictures {
+  position: relative;
+
+  img {
+    position: absolute;
+    transition: transform 0.4s;
+
+    transform-origin: 0 100%;
+    @for $i from 1 to 6 {
+
+        &:nth-child(#{$i}) {
+           transform: rotateZ(#{$i * 15 - 45}deg);
+         }
+      }
+  &:hover {
+    transform: translateX(100px);
+    z-index: 10;
+   }
+  }
+
 }
 
 h1, h2 {
