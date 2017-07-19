@@ -5,11 +5,7 @@
       img(@click="addActive" src="./assets/IMG_3.png")
       img(@click="addActive" src="./assets/IMG_4.png")
       img(@click="addActive" src="./assets/IMG_5.png")
-    h1 {{ msg }}
-    h2 Essential Links
-    ul
-      li
-        a(href="https://vuejs.org" target="_blank") Core Docs
+
 </template>
 
 <script>
@@ -53,6 +49,8 @@ export default {
 }
 
 .pictures {
+  width: 500px;
+  height: 500px;
   display: flex;
   position: relative;
 
@@ -63,7 +61,7 @@ export default {
           transform: rotateZ(#{$i * 15 - 30}deg) scale(0.5);
 
         &:hover {
-           transform: rotateZ(#{$i * 15 - 30}deg) translate(20px, -30px) scale(0.5);
+           transform: rotateZ(#{$i * 15 - 30}deg) translate(20px, -40px) scale(0.5);
          }
         }
       }
